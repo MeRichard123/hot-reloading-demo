@@ -11,8 +11,10 @@
 
 Now let’s make it dynamically linked:
 
+> NOTE: MacOS uses .dylib Linux uses .so and Windows uses .dll
+
 ```bash
-clang -o ./build/lib.dynlink -fPIC -shared ./lib.c
+clang -o ./build/lib.dylib -fPIC -shared ./lib.c
 ```
 The `-fPIC` generates position independent code which means it uses it’s own relative addresses in memory to jump. The `-shared` will generate the SO file (Unix specific)
 
